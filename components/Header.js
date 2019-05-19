@@ -6,23 +6,25 @@ class Header extends React.Component {
     return (
       <React.Fragment>
         <Link href="/" title="Home Page">
-          <button>Home Page</button>
+          <a>Home</a>
         </Link>
         <Link href="/about" title="About Page">
-          <button>About Page</button>
+          <a>About</a>
         </Link>
         <Link href="/portfolio" title="Portfolio Page">
-          <button>Portfolio Page</button>
+          <a>Portfolio</a>
         </Link>
         <Link href="/blog" title="Blog Page">
-          <button>Blog Page</button>
+          <a>Blog</a>
         </Link>
         <Link href="/cv" title="CV Page">
-          <button>CV Page</button>
+          <a>CV</a>
         </Link>
         <style jsx>
         {`
-
+          a {
+            font-size: 20px;
+          }
         `}
         </style>
       </React.Fragment>

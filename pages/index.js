@@ -1,40 +1,19 @@
 import React from 'react';
 import Header from '../components/Header';
-import Layout from '../components/Layout';
-import SuperComponent from '../components/SuperComponent';
-import axios from 'axios';
 
-class Index extends SuperComponent {
-  constructor() {
-    super()
-    this.state =  {
-      title: 'I am Index Page'
-    }
-    console.log(constructor);
-  }
+//React strap
+import { Button, Container } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
-
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
-
+class Index extends React.Component {
+  
   render() {
-    console.log('render')
     return (
       <div>
         <Header />
-        <h1>This is the index page</h1>
-        <h2>{this.state.title}</h2>
-          <a>
-            <span onClick={ () => this.updateTitle() }>Change Title</span>
-          </a>
+        <Container>
+          <Button color="danger">Danger!</Button>
+        </Container>
       </div>
     )
   }
