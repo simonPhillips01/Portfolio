@@ -32,3 +32,7 @@ https://reactstrap.github.io/
 
 Next-CSS plugin
 https://github.com/zeit/next-plugins/tree/master/packages/next-css
+
+Custom App - _app.js
+Used custom app feature on Next.js to intialise pages with main.scss.
+

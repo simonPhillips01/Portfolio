@@ -3,7 +3,6 @@ import Header from '../components/Header';
 
 //React strap
 import { Button, Container } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Index extends React.Component {
   
