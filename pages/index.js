@@ -1,4 +1,5 @@
 import React from 'react';
+import Typed from 'react-typed';
 import BaseLayout from '../components/layouts/BaseLayout';
 
 //React strap
@@ -6,6 +7,12 @@ import { Button, Container, Row, Col } from 'reactstrap';
 
 class Index extends React.Component {
   
+  constructor(props) {
+    super(props);
+
+    this.roles = ["Welcome to my Portfolio 👋", "I'm an aspiring Javascript Developer 🤨", "Come to see what inspires me 💻 📱 🖥"];
+  }
+
   render() {
     return (
       <BaseLayout className="cover">
@@ -37,9 +44,22 @@ class Index extends React.Component {
               <Col md="6" className="hero-welcome-wrapper">
                 <div className="hero-welcome-text">
                   <h1>
-                    Welcome to the portfolio website of Filip Jerga.
+                    Welcome to the portfolio website of Simon Phillips.
                     Get informed, collaborate and discover projects I was working on through the years!
                   </h1>
+                </div>
+                <div>
+                <Typed
+                  loop
+                  typeSpeed={60}
+                  backSpeed={60}
+                  strings={ this.roles }
+                  backDelay={1000}
+                  loopCount={0}
+                  showCursor
+                  className="self-typed"
+                  cursorChar="|"
+                />
                 </div>
                 <div className="hero-welcome-bio">
                   <h1>
