@@ -3,7 +3,7 @@ import App, { Container } from 'next/app'
 
 //Styling
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../style/main.scss';
+import '../styles/main.scss';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
