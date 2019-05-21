@@ -1,35 +1,65 @@
 import React from 'react';
 import Link from 'next/link';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink} from 'reactstrap';
 
-class Header extends React.Component {
+  const BsNavLink = (props) => {
+    const { route, title } = props;
+
+    return (
+      <Link href={route}>
+        <a className="nav-link">{ title }</a>
+      </Link>
+    )
+  } 
+
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
   render() {
     return (
-      <React.Fragment>
-        <Link href="/" title="Home Page">
-          <a>Home</a>
-        </Link>
-        <Link href="/about" title="About Page">
-          <a>About</a>
-        </Link>
-        <Link href="/portfolio" title="Portfolio Page">
-          <a>Portfolio</a>
-        </Link>
-        <Link href="/blog" title="Blog Page">
-          <a>Blog</a>
-        </Link>
-        <Link href="/cv" title="CV Page">
-          <a>CV</a>
-        </Link>
-        <style jsx>
-        {`
-          a {
-            font-size: 20px;
-          }
-        `}
-        </style>
-      </React.Fragment>
-    )
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">Simon Phillips</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <BsNavLink route="/" title="Home" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink route="/about" title="About" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink route="/portfolio" title="Portfolio" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink route="/blog" title="Blog" />
+              </NavItem>
+              <NavItem>
+                <BsNavLink route="/cv" title="CV" />
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
   }
 }
-
-export default Header;

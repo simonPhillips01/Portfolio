@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import BaseLayout from '../components/layouts/BaseLayout';
 import {Link} from '../routes';
 
 import Axios from 'axios';
@@ -36,7 +36,7 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <Header/>
+        <BaseLayout />
         <h1>I am the Portfolio page</h1>
         <ul>
           { this.renderPosts(posts) }
