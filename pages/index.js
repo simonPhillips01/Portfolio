@@ -10,7 +10,7 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
 
-    this.roles = ["Welcome to my Portfolio 👋", "I'm an aspiring Javascript Developer 🤨", "Come to see what inspires me 💻 📱 🖥"];
+    this.roles = ["Welcome to my Portfolio 👋", "I'm an aspiring Javascript Developer 🤞", "Come to see what inspires me 💻 📱 🖥"];
   }
 
   render() {
@@ -63,7 +63,7 @@ class Index extends React.Component {
                 </div>
                 <div className="hero-welcome-bio">
                   <h1>
-                    Let's take a look on my work.
+                    Let's take a look at my work.
                   </h1>
                 </div>
               </Col>

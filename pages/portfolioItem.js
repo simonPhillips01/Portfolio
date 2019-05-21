@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../components/Header';
+import BaseLayout from '../components/layouts/BaseLayout';
+import BasePage from '../components/BasePage';
 import { withRouter } from 'next/router';
 
 import Axios from 'axios';
@@ -24,10 +25,13 @@ class PortfolioItem extends React.Component {
     
     return (
       <div>
-        <Header/>
-        <h1>{ portfolio.title}</h1>
-        <p>{ portfolio.body }</p>
-        <p>ID: { portfolio.id }</p>
+        <BaseLayout>
+          <BasePage>
+            <h1>{ portfolio.title}</h1>
+            <p>{ portfolio.body }</p>
+            <p>ID: { portfolio.id }</p>
+          </BasePage>
+        </BaseLayout>
       </div>
     )
   }

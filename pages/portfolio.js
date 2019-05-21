@@ -3,6 +3,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import {Link} from '../routes';
 
 import Axios from 'axios';
+import BasePage from '../components/BasePage';
 
 class Portfolio extends React.Component {
   static async getInitialProps() {
@@ -36,11 +37,14 @@ class Portfolio extends React.Component {
 
     return (
       <div>
-        <BaseLayout />
-        <h1>I am the Portfolio page</h1>
-        <ul>
-          { this.renderPosts(posts) }
-        </ul>
+        <BaseLayout>
+          <BasePage>
+            <h1>I am the Portfolio page</h1>
+            <ul>  
+              { this.renderPosts(posts) }
+            </ul>
+          </BasePage>
+        </BaseLayout>
       </div>
     )
   }

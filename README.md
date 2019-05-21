@@ -34,5 +34,18 @@ Next-CSS plugin
 https://github.com/zeit/next-plugins/tree/master/packages/next-css
 
 Custom App - _app.js
-Used custom app feature on Next.js to intialise pages with main.scss.
+Used custom app feature on Next.js to intialise pages with main.scss
+
+React Typed
+https://github.com/ssbeefeater/react-typed
+
+Parse error - Adjacent JSX elements must be wrapped in an enclosing tag
+https://stackoverflow.com/questions/31284169/parse-error-adjacent-jsx-elements-must-be-wrapped-in-an-enclosing-tag
+
+Error - React props is not defined
+https://stackoverflow.com/questions/40622102/react-props-is-not-defined
+
+Typechecking with prop types
+https://reactjs.org/docs/typechecking-with-proptypes.html
+
 
