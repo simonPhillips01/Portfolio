@@ -1,4 +1,5 @@
 import auth0 from 'auth0-js';
+import Cookies from 'js-cookie';
 
 class Auth0 {
 
@@ -12,7 +13,9 @@ class Auth0 {
       });
 
       this.login = this.login.bind(this);
+      this.logout = this.logout.bind(this);
       this.handleAuthentication = this.handleAuthentication.bind(this);
+      this.isAuthenticated = this.isAuthenticated.bind(this);
   }
 
   handleAuthentication() {
@@ -30,12 +33,36 @@ class Auth0 {
     });
   }
 
-  setSession() {
-      //Save tokens
+  setSession(authResult) {
+    debugger;
+    // Set the time that the Access Token will expire at
+    const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
+    // this.accessToken = authResult.accessToken;
+    Cookies.set('user', authResult.idTokenPayLoad);
+    Cookies.set('jwt', authResult.idToken);
+    Cookies.set('expiresAt', expiresAt);
+  }
+
+  logout() {
+    Cookies.set('user');
+    Cookies.set('jwt');
+    Cookies.set('expiresAt');
+
+    this.auth0.logout({
+      returnTo: '',
+      clientID: 'Ynu5NNbuWT1rC11Hp9ASQa24X9lrHfPz'
+    })
   }
 
   login() {
     this.auth0.authorize();
+  }
+
+  isAuthenticated() {
+    // Check whether the current time is past the
+    // access token's expiry time
+    const expiresAt = Cookies.getJson('expiresAt');
+    return new Date().getTime() < expiresAt;
   }
 }
 
