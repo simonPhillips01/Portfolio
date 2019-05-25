@@ -34,7 +34,6 @@ class Auth0 {
   }
 
   setSession(authResult) {
-    debugger;
     // Set the time that the Access Token will expire at
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     // this.accessToken = authResult.accessToken;
@@ -44,9 +43,9 @@ class Auth0 {
   }
 
   logout() {
-    Cookies.set('user');
-    Cookies.set('jwt');
-    Cookies.set('expiresAt');
+    Cookies.remove('user');
+    Cookies.remove('jwt');
+    Cookies.remove('expiresAt');
 
     this.auth0.logout({
       returnTo: '',
@@ -61,7 +60,7 @@ class Auth0 {
   isAuthenticated() {
     // Check whether the current time is past the
     // access token's expiry time
-    const expiresAt = Cookies.getJson('expiresAt');
+    const expiresAt = Cookies.getJSON('expiresAt');
     return new Date().getTime() < expiresAt;
   }
 }
