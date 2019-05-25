@@ -25,7 +25,7 @@ class PortfolioItem extends React.Component {
     
     return (
       <div>
-        <BaseLayout>
+        <BaseLayout {...this.props.auth}>
           <BasePage>
             <h1>{ portfolio.title}</h1>
             <p>{ portfolio.body }</p>
