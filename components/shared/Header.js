@@ -70,7 +70,7 @@ export default class Header extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/cv" title="CV" />
               </NavItem>
-              { Auth0.isAuthenticated() === false &&
+              { !Auth0.isAuthenticated() &&
                 <NavItem className="port-navbar-item">
                   <Login/>
                 </NavItem>
