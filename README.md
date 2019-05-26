@@ -55,3 +55,5 @@ JSON Web Tokens
 https://jwt.io/
 https://www.npmjs.com/package/jsonwebtoken
 
+Javascript match function
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
