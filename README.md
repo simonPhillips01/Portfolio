@@ -48,4 +48,10 @@ https://stackoverflow.com/questions/40622102/react-props-is-not-defined
 Typechecking with prop types
 https://reactjs.org/docs/typechecking-with-proptypes.html
 
+Saving token in cookies
+https://github.com/js-cookie/js-cookie
+
+JSON Web Tokens
+https://jwt.io/
+https://www.npmjs.com/package/jsonwebtoken
 
