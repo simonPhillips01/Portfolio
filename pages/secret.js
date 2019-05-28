@@ -4,36 +4,24 @@ import BasePage from '../components/BasePage';
 import withAuth from '../components/hoc/withAuth';
 
 class Secret extends React.Component {
-  // renderSecretPage() {
-  //   const { isAuthenticated } = this.props.auth;
 
-  //   if(isAuthenticated) {
-  //     return(
-  //       <BaseLayout {...this.props.auth}>
-  //         <BasePage>
-  //           <h1>I am the secret page</h1>
-  //         </BasePage>
-  //       </BaseLayout>
-  //     )
-  //   } else {
-  //     return(
-  //       <BaseLayout {...this.props.auth}>
-  //         <BasePage>
-  //           <h1>You are not authorised. Please login to access this page.</h1>
-  //         </BasePage>
-  //       </BaseLayout>
-  //     )
-  //   }
-  // }
+  static getInitialProps() {
+    const superSecretValue = 'Siper secret value';
+
+    return { superSecretValue };
+  }
+
   render() {
+    const { superSecretValue } = this.props;
     return (
       <BaseLayout {...this.props.auth}>
           <BasePage>
             <h1>I am the secret page</h1>
+            <h2> {superSecretValue} </h2>
           </BasePage>
         </BaseLayout>
     )
   }
 }
 
-export default Secret;
+export default withAuth(Secret);
