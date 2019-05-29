@@ -60,3 +60,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 Check JWT
 https://auth0.com/docs/quickstart/backend/nodejs/01-authorization
+https://github.com/auth0/express-jwt
+https://github.com/auth0/node-jwks-rsa
+https://stackoverflow.com/questions/41888346/jwt-unauthorizederror-no-authorization-token-was-found-get-request-with-cookie#
+
+Typed RSA256 algorithm instead of RS256
+https://stackoverflow.com/questions/39874731/unauthorizederror-invalid-algorithm-express-jwt
