@@ -2,33 +2,50 @@ import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../BasePage';
 
-export default function(Component) {
-    return class withAuth extends React.Component {
+const namespace = 'http://localhost:3000/';
 
-        static async getInitialProps(args) {
-          const pageProps = await Component.getInitialProps && await Component.getInitialProps(args);
+export default role => Component => 
+  class withAuth extends React.Component {
 
-          return { ...pageProps };
-        }
+    static async getInitialProps(args) {
+      const pageProps = await Component.getInitialProps && await Component.getInitialProps(args);
 
-        renderSecretPage() {
-            const { isAuthenticated } = this.props.auth;
-        
-            if(isAuthenticated) {
-              return( <Component { ...this.props }/>)
-            } else {
-              return(
-                <BaseLayout {...this.props.auth}>
-                  <BasePage>
-                    <h1>You are not authorised. Please login to access this page.</h1>
-                  </BasePage>
-                </BaseLayout>
-              )
-            }
-          }
-        
-        render() {
-            return this.renderSecretPage();
-        }
+      return { ...pageProps };
     }
-}
+
+    renderSecretPage() {
+        const { isAuthenticated, user } = this.props.auth;
+        const userRole = user && user[`${namespace}role`];
+        let isAuthorized = false;
+
+        if(role) {
+          if(userRole && userRole === role) { isAuthorized = true };
+        } else {
+          isAuthorized = true;
+        }
+
+        if(!isAuthenticated) {
+          return(
+            <BaseLayout {...this.props.auth}>
+              <BasePage>
+                <h1>You are not authenticated. Please login to access this page.</h1>
+              </BasePage>
+            </BaseLayout>
+          )
+        } else if (!isAuthorized) {
+          return(
+            <BaseLayout {...this.props.auth}>
+              <BasePage>
+                <h1>You are not authorised. You don't have permission to visit this page.</h1>
+              </BasePage>
+            </BaseLayout>
+          )
+        } else {
+          return( <Component { ...this.props }/>)
+        }
+      }
+    
+    render() {
+        return this.renderSecretPage();
+    }
+  }
