@@ -1,5 +1,7 @@
+  @import '/shared/colors';
+  
   // HEADER
-  .port-navbar.port-default {
+  .port-navbar.port-nav-base {
     width: 100%;
     z-index: 15;
     padding: 40px;
@@ -36,3 +38,22 @@
     }
   }
   
+  .port-navbar.port-nav-base.port-nav-default {
+    background-color: $secondary !important;
+  }
+
+  .port-navbar.port-nav-base.port-nav-about {
+    background-color: $indigo !important;
+  }
+
+  .port-navbar.port-nav-base.port-nav-portfolio {
+    background-color: $green !important;
+  }
+
+  .port-navbar.port-nav-base.port-nav-blog {
+    background-color: $orange !important;
+  }
+
+  .port-navbar.port-nav-base.port-nav-cv {
+    background-color: $red !important;
+  }

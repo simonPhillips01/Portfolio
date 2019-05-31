@@ -6,7 +6,7 @@ class Blog extends React.Component {
   render() {
     return (
       <div>
-        <BaseLayout {...this.props.auth}>
+        <BaseLayout {...this.props.auth} headerType="blog">
           <BasePage>
             <h1>I am the blog page</h1>
           </BasePage>

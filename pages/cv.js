@@ -6,7 +6,7 @@ class CV extends React.Component {
   render() {
     return (
       <div>
-        <BaseLayout {...this.props.auth}>
+        <BaseLayout {...this.props.auth} headerType="cv">
           <BasePage>
             <h1>I am the cv page</h1>
           </BasePage>
