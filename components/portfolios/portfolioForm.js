@@ -1,6 +1,7 @@
 // Render Prop
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Button, FormGroup, Label } from 'reactstrap';
 
 const validateInputs = (validate) => {
     let errors = {};
@@ -36,47 +37,47 @@ const PortfolioForm = () => (
     >
       {({ isSubmitting }) => (
         <Form>
-          <div>
-          <label>Title</label>
-          <Field type="text" name="title" />
+          <FormGroup>
+          <Label>Title</Label>
+          <Field className="form-control" type="text" name="title" />
           <ErrorMessage name="title" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>Company</label>
-          <Field type="text" name="company" />
+          <FormGroup>
+          <Label>Company</Label>
+          <Field className="form-control" type="text" name="company" />
           <ErrorMessage name="company" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>Location</label>
-          <Field type="text" name="location" />
+          <FormGroup>
+          <Label>Location</Label>
+          <Field className="form-control" type="text" name="location" />
           <ErrorMessage name="location" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>Position</label>
-          <Field type="text" name="position" />
+          <FormGroup>
+          <Label>Position</Label>
+          <Field className="form-control" type="text" name="position" />
           <ErrorMessage name="position" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>Description</label>            
-          <Field type="textarea" name="description" component="textarea"/>
+          <FormGroup>
+          <Label>Description</Label>            
+          <Field className="form-control" type="textarea" name="description" component="textarea"/>
           <ErrorMessage name="description" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>Start Date</label>
-          <Field type="text" name="startDate" />
+          <FormGroup>
+          <Label>Start Date</Label>
+          <Field className="form-control" type="text" name="startDate" />
           <ErrorMessage name="startDate" component="div" />
-          </div>
+          </FormGroup>
 
-          <div>
-          <label>End Date</label>
-          <Field type="text" name="endDate" />
+          <FormGroup>
+          <Label>End Date</Label>
+          <Field className="form-control" type="text" name="endDate" />
           <ErrorMessage name="endDate" component="div" />
-          </div>
+          </FormGroup>
           
           <button type="submit" disabled={isSubmitting}>
             Create
@@ -113,14 +114,14 @@ export default PortfolioForm;
 //     render() {
 //       return (
 //         <form onSubmit={this.handleSubmit}>
-//           <label>
+//           <Label>
 //             Name:
 //             <input name="title" type="text" value={this.state.value} onChange={this.handleChange} />
-//           </label>
-//           <label>
+//           </Label>
+//           <Label>
 //             Description:
 //             <textarea name="description" value={this.state.description} onChange={this.handleChange} />
-//           </label>
+//           </Label>
 //           <select name="language" value={this.state.language} onChange={this.handleChange}>
 //             <option value="Vanilla Javascript">Vanilla Javascript</option>
 //             <option value="ES6">ES6</option>

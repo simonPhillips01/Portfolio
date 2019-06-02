@@ -3,6 +3,7 @@ import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
 import withAuth from '../components/hoc/withAuth';
 import PortfolioForm from '../components/portfolios/portfolioForm'
+import { Row, Col } from 'reactstrap';
 
 class PortfolioNew extends React.Component {
   render() {
@@ -10,7 +11,11 @@ class PortfolioNew extends React.Component {
       <div>
         <BaseLayout {...this.props.auth} headerType="about">
           <BasePage className="portfolio-create-page" title="Create new portfolio">
-              <PortfolioForm/>
+            <Row>
+              <Col md="6">
+                <PortfolioForm/>
+              </Col>
+            </Row>
           </BasePage>
         </BaseLayout>
       </div>
