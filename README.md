@@ -66,3 +66,12 @@ https://stackoverflow.com/questions/41888346/jwt-unauthorizederror-no-authorizat
 
 Typed RSA256 algorithm instead of RS256
 https://stackoverflow.com/questions/39874731/unauthorizederror-invalid-algorithm-express-jwt
+
+React forms
+https://reactjs.org/docs/forms.html
+
+Formik
+https://github.com/jaredpalmer/formik
+https://jaredpalmer.com/formik/
+
+
