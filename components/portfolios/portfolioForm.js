@@ -3,10 +3,11 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
 import PortInput from '../form/portInput';
+import PortDate from '../form/portDate';
 
 const validateInputs = (values) => {
     let errors = {};
-    debugger;
+    
     Object.entries(values).forEach(([key, value]) => {
       if(!values[key]) {
         errors[key] = `Field ${key} is required!`
@@ -59,9 +60,9 @@ const PortfolioForm = () => (
           
           <Field type="textarea" name="description" label="Description" component={PortInput}/>
           
-          <Field type="text" name="startDate" label="StatDate" component={PortInput}/>
+          <Field name="startDate" label="Stat Date" component={PortDate}/>
           
-          <Field type="text" name="endDate" label="EndDate" component={PortInput}/>
+          <Field name="endDate" label="End Date" component={PortDate}/>
           
           <button type="submit" disabled={isSubmitting}>
             Create
