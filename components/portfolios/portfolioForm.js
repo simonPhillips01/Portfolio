@@ -4,8 +4,18 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Button, FormGroup, Label } from 'reactstrap';
 import PortInput from '../form/portInput';
 
-const validateInputs = (validate) => {
+const validateInputs = (values) => {
     let errors = {};
+    debugger;
+    Object.entries(values).forEach(([key, value]) => {
+      if(!values[key]) {
+        errors[key] = `Field ${key} is required!`
+      }
+    });
+    
+    return errors;
+  }
+
     // if (!values.email) {
     //     errors.email = 'Required';
     //   } else if (
@@ -14,7 +24,7 @@ const validateInputs = (validate) => {
     //     errors.email = 'Invalid email address';
     //   }
     //   return errors;
-    }
+    // }
 
 const INITIAL_VALUES = { title: '',
                          company: '', 

@@ -10,6 +10,10 @@ html, body {
     font-family: 'Montserrat', 'Helvetica';
   }
 
+  .clickable {
+    cursor: pointer;
+  }
+
   .self-typed {
     font-size: 31px;
     font-weight: bold;
@@ -19,6 +23,11 @@ html, body {
 
   .absolute {
     position: absolute;
+  }
+
+  .error {
+    // font-weight: 500;
+    color: red;
   }
 
   .base-page {
@@ -35,8 +44,4 @@ html, body {
         margin-bottom: 20px;
       }
     }
-  }
-
-  .clickable {
-    cursor: pointer;
   }
