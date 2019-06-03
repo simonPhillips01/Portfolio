@@ -74,4 +74,12 @@ Formik
 https://github.com/jaredpalmer/formik
 https://jaredpalmer.com/formik/
 
+Object Entries
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries
+
+Datepicker
+https://momentjs.com/
+https://github.com/Hacker0x01/react-datepicker
+https://reactdatepicker.com/
+https://www.npmjs.com/package/react-datepicker
 
