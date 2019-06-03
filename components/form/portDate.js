@@ -13,10 +13,15 @@ export default class PortDate extends React.Component {
   }
 
   handleChange(date) {
+    const { setFieldValue, setFieldTouched } = this.props.form;
+    const { name } = this.props.field;
 
     this.setState({
       dateValue: date
     });
+
+    setFieldValue(name, date, true);
+    setFieldTouched(name, true, true);
   }
 
   render() {
@@ -30,9 +35,11 @@ export default class PortDate extends React.Component {
           selected={this.state.dateValue}
           onChange={this.handleChange}
           peekNextMonth
-          // showMonthDropdowna
+          // showMonthDropdown
           // showMonthYearDropdown
-          // maxDate={new Date()}
+          // minDate={new Date()}
+          // maxDate={addDays(new Date(), 5)}
+          dateFormat="dd/MM/yyyy"
           dropdownMode="select"
         />
         </div>
