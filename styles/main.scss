@@ -1,7 +1,11 @@
 @import '/shared/fonts';
+@import '/shared/colors';
+@import './shared/mixins';
+
+//Pages
 @import 'index';
 @import 'header';
-@import '/shared/colors';
+@import 'about';
 @import 'portfolio';
 
 html, body {
@@ -33,7 +37,7 @@ html, body {
   .base-page {
     padding-top: 150px;
     color: black;
-    background-color: #ecedee;
+    background-color: $base-page-white;
     min-height: 100vh;
   
     .page-header {
