@@ -10,9 +10,15 @@ const validateInputs = (values) => {
     
     Object.entries(values).forEach(([key, value]) => {
       if(!values[key] && (values[key] === 'startDate' || values[key] === 'endDate')) {
-        errors[key] = `Field ${key} is required!`
+        errors[key] = `Field ${key} is required!`;
       }
-    });
+    })
+
+    // Object.keys(values).forEach((key) => {
+    //   if(!values[key]) {
+    //     errors[key] = `Field ${key} is required!`;
+    //   }
+    // })
 
     const startDate = values.startDate;
     const endDate = values.endDate;
@@ -23,16 +29,6 @@ const validateInputs = (values) => {
     
     return errors;
   }
-
-    // if (!values.email) {
-    //     errors.email = 'Required';
-    //   } else if (
-    //     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-    //   ) {
-    //     errors.email = 'Invalid email address';
-    //   }
-    //   return errors;
-    // }
 
 const INITIAL_VALUES = { title: '',
                          company: '', 
@@ -69,7 +65,7 @@ const PortfolioForm = () => (
           
           <Field name="startDate" label="Stat Date" component={PortDate}/>
           
-          <Field name="endDate" label="End Date" component={PortDate}/>
+          <Field name="endDate" label="End Date" canBeDisabled={true} component={PortDate}/>
           
           <button type="submit" disabled={isSubmitting}>
             Create
@@ -81,47 +77,3 @@ const PortfolioForm = () => (
 );
 
 export default PortfolioForm;
-
-// import React from 'react';
-
-// export default class PortfolioForm extends React.Component {
-//     constructor(props) {
-//       super(props);
-//       this.state = {title: '', description: '', language: ''}; 
-  
-//       this.handleChange = this.handleChange.bind(this);
-//       this.handleSubmit = this.handleSubmit.bind(this);
-//     }
-  
-//     handleChange(event) {
-//         const field = event.target.name;
-//         this.setState({[field]: event.target.value});
-//     }
-  
-//     handleSubmit(event) {
-//       alert('A name was submitted: ' + this.state.title + ' ' + this.state.description + ' ' + this.state.language);
-//       event.preventDefault();
-//     }
-  
-//     render() {
-//       return (
-//         <form onSubmit={this.handleSubmit}>
-//           <Label>
-//             Name:
-//             <input name="title" type="text" value={this.state.value} onChange={this.handleChange} />
-//           </Label>
-//           <Label>
-//             Description:
-//             <textarea name="description" value={this.state.description} onChange={this.handleChange} />
-//           </Label>
-//           <select name="language" value={this.state.language} onChange={this.handleChange}>
-//             <option value="Vanilla Javascript">Vanilla Javascript</option>
-//             <option value="ES6">ES6</option>
-//             <option selected value="Typescript">Typescript</option>
-//             <option value="Jquery">Jquery</option>
-//           </select>
-//           <input type="submit" value="Submit" />
-//         </form>
-//       );
-//     }
-//   }
