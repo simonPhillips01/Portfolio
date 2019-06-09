@@ -1,6 +1,7 @@
 const express = require('express');
 const next = require('next');
 const routes = require('../routes');
+const mongoose = require('mongoose');
 
 //Services
 const authService = require('./services/auth');
@@ -19,6 +20,10 @@ const secretData = [
         description: 'My secret passwords'
     }
 ]
+
+mongoose.connect('mongodb+srv://admin:<password>@portfolio-ookex.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true })
+  .then(() => console.log('Database connected!'))
+  .catch(err => console.error(err))
 
 app
   .prepare()
