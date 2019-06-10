@@ -11,6 +11,9 @@ const app = next({ dev });
 const handle = routes.getRequestHandler(app);
 const config = require('./config');
 
+const Book = require('./models/book');
+const bodyParser = require('body-parser');
+
 const secretData = [
     {
         title: 'SecretData 1',
@@ -32,6 +35,21 @@ app
   .prepare()
   .then(() => {
     const server = express();
+    server.use(bodyParser.json());
+
+    server.post('/api/v1/books', (req, res) => {
+      const bookData = req.body;
+
+      const book = new Book(bookData);
+
+      book.save((err, createdBook) => {
+        if(err) {
+          return res.status(422).send(err);
+        }
+
+        return res.json(createdBook);
+      })
+    })
 
     server.get('/api/v1/secret', authService.checkJWT, (req, res) => {
         return res.json(secretData);
