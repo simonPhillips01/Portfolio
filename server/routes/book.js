@@ -8,6 +8,6 @@ router.get('', bookController.getBooks);
 
 router.patch('/:id', bookController.updateBook);
 
-router.delete('/:id', bookController.deletebook);
+router.delete('/:id', bookController.deleteBook);
 
 module.exports = router;

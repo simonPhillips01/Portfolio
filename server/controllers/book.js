@@ -45,7 +45,7 @@ exports.updateBook = (req, res) => {
     })
   }
 
-exports.deletebook = (req, res) => {
+exports.deleteBook = (req, res) => {
     const bookId = req.params.id;
 
     Book.deleteOne({_id: bookId}, (err, deletedBook) => {

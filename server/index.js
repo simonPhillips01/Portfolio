@@ -15,6 +15,7 @@ const Book = require('./models/book');
 const bodyParser = require('body-parser');
 
 const bookRoutes = require('./routes/book');
+const portfolioRoutes = require('./routes/portfolio');
 
 const secretData = [
     {
@@ -40,6 +41,7 @@ app
     server.use(bodyParser.json());
 
     server.use('/api/v1/books', bookRoutes)
+    server.use('/api/v1/portfolios', portfolioRoutes)
 
     server.get('/api/v1/secret', authService.checkJWT, (req, res) => {
         return res.json(secretData);
