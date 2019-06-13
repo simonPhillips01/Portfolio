@@ -5,6 +5,7 @@ import withAuth from '../components/hoc/withAuth';
 import PortfolioForm from '../components/portfolios/portfolioForm'
 import { Row, Col } from 'reactstrap';
 import { createPortfolio } from '../actions';
+import { Router } from '../routes';
 
 class PortfolioNew extends React.Component {
 
@@ -18,12 +19,17 @@ class PortfolioNew extends React.Component {
     this.savePortfolio = this.savePortfolio.bind(this);
   }
 
-  savePortfolio(portfolioData) {
+  savePortfolio(portfolioData, {setSubmitting}) {
+    setSubmitting(true);
+
     createPortfolio(portfolioData).then((portfolio) => {
+      setSubmitting(false);
       this.setState({error: undefined});
-    }).catch((err) => { 
-      debugger;
-      this.setState({error: err.message});
+      Router.pushRoute('/portfolio');
+    }).catch((err) => {
+      const error = err.message || 'Server Error!';
+      setSubmitting(false);
+      this.setState({error});
     })
   }
 
