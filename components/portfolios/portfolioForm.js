@@ -7,15 +7,15 @@ import PortDate from '../form/portDate';
 
 const validateInputs = (values) => {
     let errors = {};
-    
+
     Object.entries(values).forEach(([key, value]) => {
       if(!values[key] && key !== 'endDate') {
         errors[key] = `Field ${key} is required!`;
       }
     })
 
-    const startDate = values.startDate;
-    const endDate = values.endDate;
+    const startDate = new Date(values.startDate);
+    const endDate = new Date(values.endDate);
 
     //Need to look over functionality
     if(startDate && endDate && endDate.isBefore(startDate)) {
