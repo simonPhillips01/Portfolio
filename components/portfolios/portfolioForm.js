@@ -7,12 +7,13 @@ import PortDate from '../form/portDate';
 
 const validateInputs = (values) => {
     let errors = {};
+    debugger;
 
     Object.entries(values).forEach(([key, value]) => {
       if(!values[key] && key !== 'endDate') {
-        errors[key] = `Field ${key} is required!`;
+        errors[key] = `Field ${key} is ${value} required!`;
       }
-    })
+    });
 
     const startDate = new Date(values.startDate);
     const endDate = new Date(values.endDate);
@@ -47,7 +48,7 @@ const PortfolioForm = ({initialValues, onSubmit, error}) => (
           
           <Field name="startDate" label="Stat Date" initialDate={initialValues.startDate} component={PortDate}/>
           
-          <Field name="endDate" label="End Date" initialDate={initialValues.endDate} canBeDisabled={true} component={PortDate}/>
+          <Field name="endDate" label="End Date" canBeDisabled={true} initialDate={initialValues.endDate} component={PortDate}/>
 
           { error && <Alert color="danger">{ error }</Alert>}
           

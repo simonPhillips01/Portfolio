@@ -33,7 +33,7 @@ class PortfolioNew extends React.Component {
     createPortfolio(portfolioData).then((portfolio) => {
       setSubmitting(false);
       this.setState({error: undefined});
-      Router.pushRoute('/portfolio');
+      Router.pushRoute('/portfolios');
     }).catch((err) => {
       const error = err.message || 'Server Error!';
       setSubmitting(false);

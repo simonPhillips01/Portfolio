@@ -83,3 +83,8 @@ https://github.com/Hacker0x01/react-datepicker
 https://reactdatepicker.com/
 https://www.npmjs.com/package/react-datepicker
 
+Validation error
+https://airbrake.io/blog/javascript-error-handling/referenceerror-x-is-not-defined
+
+Routing error
+https://github.com/zeit/next.js/issues/1321

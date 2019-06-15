@@ -15,7 +15,7 @@ class PortfolioEdit extends React.Component {
     try {
       portfolio = await getPortfolioById(query.id);
     } catch(error) {
-        console.lerror(err);
+        console.error(err);
     }
 
     return {portfolio};
@@ -37,7 +37,7 @@ class PortfolioEdit extends React.Component {
     updatePortfolio(portfolioData).then((portfolio) => {
       setSubmitting(false);
       this.setState({error: undefined});
-      Router.pushRoute('/portfolio');
+      Router.pushRoute('/portfolios');
     }).catch((err) => {
       const error = err.message || 'Server Error!';
       setSubmitting(false);

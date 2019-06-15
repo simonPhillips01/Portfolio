@@ -5,7 +5,7 @@ import { withRouter } from 'next/router';
 
 import Axios from 'axios';
 
-class PortfolioItem extends React.Component {
+class Portfolios extends React.Component {
   static async getInitialProps({query}) {
     const portfolioId = query.id;
     let portfolio = {};
@@ -37,4 +37,4 @@ class PortfolioItem extends React.Component {
   }
 }
 
-export default withRouter(PortfolioItem);
+export default withRouter(Portfolios);
