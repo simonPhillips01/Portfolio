@@ -1,56 +1,35 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
-import {Link} from '../routes';
-import { Col, Row, Card, CardHeader, CardBody, CardText, CardTitle } from 'reactstrap';
-
-import { getPortfolios } from '../actions';
 import BasePage from '../components/BasePage';
+import { withRouter } from 'next/router';
+
+import Axios from 'axios';
 
 class Portfolio extends React.Component {
-  static async getInitialProps() {
-    let portfolios = [];
+  static async getInitialProps({query}) {
+    const portfolioId = query.id;
+    let portfolio = {};
 
     try {
-      portfolios = await getPortfolios();
-    } catch(err) {
-      console.log(err);
+      const response = await Axios.get(`https://jsonplaceholder.typicode.com/posts/${portfolioId}`);
+      portfolio = response.data
+    } 
+    catch(err) {
+      console.error(err);
     }
-
-    return {portfolios};
+    return {portfolio};
   }
 
-    renderPortfolios(portfolios) {
-      return portfolios.map((portfolio, index) => {
-        return (
-          <Col key={index} md="4">
-            <React.Fragment>
-              <span>
-                <Card className="portfolio-card">
-                  <CardHeader className="portfolio-card-header">{portfolio.position}</CardHeader>
-                  <CardBody>
-                    <p className="portfolio-card-city">{portfolio.location}</p>
-                    <CardTitle className="portfolio-card-title">{portfolio.title}</CardTitle>
-                    <CardText className="portfolio-card-text">{portfolio.description}</CardText>
-                    <div className="readMore"> </div>
-                  </CardBody>
-                </Card>
-              </span>
-            </React.Fragment>
-          </Col>
-        )
-      })
-    }
-  
   render() {
-    const { portfolios } = this.props;
-
+    const { portfolio } = this.props;
+    
     return (
       <div>
-        <BaseLayout {...this.props.auth} headerType="portfolio">
-          <BasePage className="portfolio-page" title="Portfolios">
-            <Row>  
-              { this.renderPortfolios(portfolios) }
-            </Row>
+        <BaseLayout {...this.props.auth}>
+          <BasePage>
+            <h1>{ portfolio.title}</h1>
+            <p>{ portfolio.body }</p>
+            <p>ID: { portfolio.id }</p>
           </BasePage>
         </BaseLayout>
       </div>
@@ -58,4 +37,4 @@ class Portfolio extends React.Component {
   }
 }
 
-export default Portfolio;
+export default withRouter(Portfolio);

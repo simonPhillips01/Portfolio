@@ -88,5 +88,3 @@ https://airbrake.io/blog/javascript-error-handling/referenceerror-x-is-not-defin
 
 Routing error
 https://github.com/zeit/next.js/issues/1321
-
-Testing
