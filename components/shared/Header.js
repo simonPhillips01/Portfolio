@@ -67,12 +67,12 @@ export default class Header extends React.Component {
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/portfolios" title="Portfolio" />
               </NavItem>
-              {/* <NavItem className="port-navbar-item">
+              <NavItem className="port-navbar-item">
                 <BsNavLink route="/blog" title="Blog" />
               </NavItem>
               <NavItem className="port-navbar-item">
                 <BsNavLink route="/cv" title="CV" />
-              </NavItem> */}
+              </NavItem>
               { !isAuthenticated &&
                 <NavItem className="port-navbar-item">
                   <Login/>

@@ -39,7 +39,7 @@
   }
   
   .port-navbar.port-nav-base.port-nav-default {
-    background-color: $secondary !important;
+    background-image: $secondary !important;
   }
 
   .port-navbar.port-nav-base.port-nav-about {
@@ -47,11 +47,11 @@
   }
 
   .port-navbar.port-nav-base.port-nav-portfolio {
-    background-color: $indigo !important;
+    background-color: linear-gradient(300deg, #6610f2 0%, #361677 100%) !important;
   }
 
   .port-navbar.port-nav-base.port-nav-blog {
-    background-color: $experiment !important;
+    background-color: $secondary !important;
   }
 
   .port-navbar.port-nav-base.port-nav-cv {
