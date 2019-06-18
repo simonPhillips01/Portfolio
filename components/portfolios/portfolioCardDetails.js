@@ -1,34 +1,27 @@
 import React from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import moment from 'moment';
 
 class PortfolioCardDetails extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            modal: false
-        };
-
-        this.toggle = this.toggle.bind(this);
-    }
-
-    toggle() {
-        this.setState({
-            modal: !this.state.modal
-        });
-    }
+    
 
     render() {
+        const { isOpen, toggle, portfolio } = this.props;
+
         return (
             <div>
-                <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                <Modal isOpen={isOpen} toggle={toggle}>
+                    <ModalHeader toggle={toggle}>{portfolio.title}</ModalHeader>
                     <ModalBody>
-                        Lorem ipsum
+                        <p><b>Description: </b>{portfolio.description}</p>
+                        <p><b>Company: </b>{portfolio.company}</p>
+                        <p><b>Position: </b>{portfolio.position}</p>
+                        <p><b>Location: </b>{portfolio.location}</p>
+                        <p><b>Start Date: </b>{moment(portfolio.startDate).format('MMMM YYYY')}</p>
+                        <p><b>End Date: </b>{portfolio.endDate ? moment(portfolio.endDate).format('MMMM YYYY') : 'Still working here'}</p>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={this.toggle}>Do something</Button>{' '}
-                        <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                        <Button color="secondary" onClick={toggle}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
             </div>
