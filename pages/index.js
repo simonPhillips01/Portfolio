@@ -10,10 +10,32 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      isFlipping: false
+    }
+
     this.roles = ["Welcome to my Portfolio 👋", "I'm an aspiring Javascript Developer 🤞", "Come to see what inspires me 💻 📱 🖥"];
   }
 
+  componentDidMount() {
+    this.animateCard();
+  }
+
+  componentWillLeave() {
+    this.cardAnimationInterval && clearInterval(this.cardAnimationInterval);
+  }
+
+  animateCard() {
+    this.cardAnimationInterval = setInterval(() => {
+      this.setState({
+        isFlipping: !this.state.isFlipping
+      });
+    }, 3000);
+  }
+
   render() {
+    const { isFlipping } = this.state;
+
     return (
       <BaseLayout className="cover" {...this.props.auth} headerType="index">
         <div className="main-section">
@@ -25,7 +47,7 @@ class Index extends React.Component {
             <Row>
               <Col md="6">
                 <div className="hero-section">
-                  <div className={`flipper`}>
+                  <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                     <div className="back">
                       <div className="hero-section-content">
                         <h2> Full Stack Web Developer </h2>
