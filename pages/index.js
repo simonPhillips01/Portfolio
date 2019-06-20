@@ -21,7 +21,7 @@ class Index extends React.Component {
     this.animateCard();
   }
 
-  componentWillLeave() {
+  componentWillUnmount() {
     this.cardAnimationInterval && clearInterval(this.cardAnimationInterval);
   }
 
@@ -30,7 +30,7 @@ class Index extends React.Component {
       this.setState({
         isFlipping: !this.state.isFlipping
       });
-    }, 5000);
+    }, 4000);
   }
 
   render() {
