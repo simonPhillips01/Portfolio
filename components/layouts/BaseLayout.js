@@ -3,7 +3,7 @@ import Header from '../shared/Header';
 import Head from 'next/head';
 
 const BaseLayout = (props) => {
-  const { className, children, isAuthenticated } = props;
+  const { className, children, isAuthenticated, user, isSiteOwner } = props;
   const headerType = props.headerType || 'default';
   return (
     <React.Fragment>
@@ -14,7 +14,7 @@ const BaseLayout = (props) => {
         <div className="layout-container">
           {/* {headerType === 'index' && <Header className="port-nav-index" isAuthenticated={isAuthenticated}/>}
           {headerType === 'default' && <Header className="port-nav-default" isAuthenticated={isAuthenticated}/>} */}
-          <Header className={`port-nav-${headerType}`} isAuthenticated={isAuthenticated}/>
+          <Header className={`port-nav-${headerType}`} isAuthenticated={isAuthenticated} user={user} isSiteOwner={isSiteOwner}/>
           <main className={`cover ${className}`}>
             <div className="wrapper">
               {children}
