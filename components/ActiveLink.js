@@ -11,6 +11,8 @@ const ActiveLink = ({children, router, ...props}) => {
         className = `${className} ${props.activeClassName}`
     }
 
+    delete props.activeClassName;
+
     return <Link {...props}>{React.cloneElement(child, {className})}</Link>
 }
 
