@@ -49,11 +49,21 @@
 
       .port-dropdown-toggle {
         color: white;
+        margin-left: 10px;
+        margin-right: 10px;
       }
 
     }
   }
+
+  .bg-transparent.menu-open {
+    background-color: #343a40 !important;
+  }
   
+  .bg-transparent.menu-closed {
+   transition: 1s;
+  }
+
   .port-navbar.port-nav-base.port-nav-default {
     background-image: $secondary !important;
   }
