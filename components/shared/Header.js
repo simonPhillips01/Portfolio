@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ActiveLink from '../ActiveLink';
 import {
   Collapse,
   Navbar,
@@ -15,9 +16,9 @@ import Auth0 from '../../services/auth0';
     const { route, title } = props;
 
     return (
-      <Link href={route}>
+      <ActiveLink activeClassName="active" route={route}>
         <a className="nav-link port-navbar-link">{ title }</a>
-      </Link>
+      </ActiveLink>
     )
   } 
 
