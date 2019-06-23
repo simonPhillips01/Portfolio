@@ -9,8 +9,9 @@ class BlogEditor extends React.Component {
     render() {
         return (
             <BaseLayout {...this.props.auth}>
-                <BasePage className="blog-editor-page" title="Write your story..."></BasePage>
+                <BasePage className="blog-editor-page" title="Write your story...">
                 <SlateEditor />
+                </BasePage>
             </BaseLayout>
         )
     }
