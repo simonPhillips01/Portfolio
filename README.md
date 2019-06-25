@@ -94,3 +94,6 @@ https://docs.slatejs.org/
 
 Emotion
 https://emotion.sh/docs/introduction
+
+Material Icons
+https://google.github.io/material-design-icons/
