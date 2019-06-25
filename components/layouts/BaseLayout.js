@@ -10,6 +10,7 @@ const BaseLayout = (props) => {
       <Head>
         <title>Simon Phillips</title>
         <script src="https://kit.fontawesome.com/76b070cc82.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Head>
         <div className="layout-container">
           {/* {headerType === 'index' && <Header className="port-nav-index" isAuthenticated={isAuthenticated}/>}
