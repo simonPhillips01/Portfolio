@@ -31,6 +31,7 @@ class BlogEditor extends React.Component {
             this.setState({isSaving: false});
             console.log(data)
         }).catch((err) => {
+            debugger;
             this.setState({isSaving: false});
             const message = err.message || 'Server Error!';
             console.error(message);
