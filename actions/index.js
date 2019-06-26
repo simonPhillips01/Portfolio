@@ -61,10 +61,16 @@ export const deletePortfolio = (portfolioId) => {
 
 // -------- Blog actions ---------- //
 
-export const saveBlog = (blogData) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve('promise resolved!!!!');
-        }, 1000)
-    })
+export const createBlog = (blogData) => {
+    return axiosInstance.post('/blogs', blogData, setAuthHeader())
+        .then(response => response.data)
+        .catch(err => rejectPromise(err))
 }
+
+// export const saveBlog = (blogData) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('promise resolved!!!!');
+//         }, 1000)
+//     })
+// }

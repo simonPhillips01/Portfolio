@@ -5,7 +5,7 @@ import BasePage from '../components/BasePage';
 import withAuth from '../components/hoc/withAuth';
 import SlateEditor from '../components/slate-editor/Editor';
 
-import {saveBlog } from '../actions';
+import {createBlog } from '../actions';
 
 class BlogEditor extends React.Component {
     
@@ -19,15 +19,21 @@ class BlogEditor extends React.Component {
         this.saveBlog = this.saveBlog.bind(this);
     }
 
-    saveBlog(heading) {
+    saveBlog(story, heading) {
         const blog = {};
         blog.title = heading.title;
-        blog.subtitle = heading.subtitle;
+        blog.subTitle = heading.subtitle;
+        blog.story = story;
+
         this.setState({isSaving: true});
         
-        saveBlog().then(data => {
+        createBlog(blog).then(data => {
             this.setState({isSaving: false});
             console.log(data)
+        }).catch((err) => {
+            this.setState({isSaving: false});
+            const message = err.message || 'Server Error!';
+            console.error(message);
         })
     }
     
