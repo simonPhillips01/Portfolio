@@ -67,10 +67,6 @@ export const createBlog = (blogData) => {
         .catch(err => rejectPromise(err))
 }
 
-// export const saveBlog = (blogData) => {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve('promise resolved!!!!');
-//         }, 1000)
-//     })
-// }
+export const getBlogById = (blogId) => {
+    return axiosInstance.get(`/blogs/${blogId}`).then(response => response.data);
+}
