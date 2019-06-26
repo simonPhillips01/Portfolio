@@ -13,9 +13,10 @@ class BlogEditor extends React.Component {
         this.saveBlog = this.saveBlog.bind(this);
     }
 
-    saveBlog() {
-        heading.title;
-        heading.subtitle;
+    saveBlog(heading) {
+        const blog = {};
+        blog.title = heading.title;
+        blog.subtitle = heading.subtitle;
         
         console.log('Calling saveBlog()');
     }
