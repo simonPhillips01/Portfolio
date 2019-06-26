@@ -11,13 +11,15 @@ class BlogEditorUpdate extends React.Component {
     
     static async getInitialProps({query}) {
         const blogId = query.id;
+        let blog = {};
 
         try {
-            const blog = await getBlogById(blogId);
-            return {blog};
+            blog = await getBlogById(blogId);
         } catch(err) {
-            return {err};
+            console.error(err);
         }
+
+        return {blog};
     }
     
     constructor(props) {
@@ -30,13 +32,12 @@ class BlogEditorUpdate extends React.Component {
     
     render() {
         const { blog } = this.props;
-        console.log(blog);
         const { isSaving } = this.state;
 
         return (
             <BaseLayout {...this.props.auth}>
                 <BasePage containerClass="editor-wrapper" className="blog-editor-page">
-                <SlateEditor isLoading={isSaving} save={() => { console.log('Update should be here')}}/>
+                <SlateEditor initialValue={blog.story} isLoading={isSaving} save={() => { console.log('Update should be here')}}/>
                 </BasePage>
             </BaseLayout>
         )
