@@ -100,3 +100,6 @@ https://google.github.io/material-design-icons/
 
 Serialise HTML
 https://www.npmjs.com/package/slate-html-serializer
+
+Async lock
+https://www.npmjs.com/package/async-lock

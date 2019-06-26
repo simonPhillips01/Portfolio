@@ -61,8 +61,8 @@ export const deletePortfolio = (portfolioId) => {
 
 // -------- Blog actions ---------- //
 
-export const createBlog = (blogData) => {
-    return axiosInstance.post('/blogs', blogData, setAuthHeader())
+export const createBlog = (blogData, lockId) => {
+    return axiosInstance.post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
         .then(response => response.data)
         .catch(err => rejectPromise(err))
 }
