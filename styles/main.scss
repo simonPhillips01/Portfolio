@@ -4,11 +4,14 @@
 
 //Pages
 @import 'index';
-@import 'header';
 @import 'about';
 @import 'portfolio';
 @import 'blogs';
 @import 'cv';
+
+//Components
+@import 'header';
+@import './slate-editor';
 
 html, body {
     height:100%;

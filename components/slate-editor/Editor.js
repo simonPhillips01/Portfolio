@@ -1,10 +1,12 @@
 import React from 'react';
 
 import HoverMenu from './HoverMenu';
+import controlMenu from './ControlMenu';
 
 import { Editor } from 'slate-react';
 import { initialValue } from './initial-value';
 import { renderMark, renderNode } from './renderers';
+import ControlMenu from './ControlMenu';
 
 export default class SlateEditor extends React.Component {
   // Set the initial value when the app is first constructed.
@@ -74,6 +76,7 @@ export default class SlateEditor extends React.Component {
     const children = next()
     return (
       <React.Fragment>
+        <ControlMenu></ControlMenu>
         {children}
         <HoverMenu innerRef={menu => (this.menu = menu)} editor={editor} />
       </React.Fragment>
