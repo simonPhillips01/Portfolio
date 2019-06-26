@@ -68,7 +68,6 @@ export default class SlateEditor extends React.Component {
   }
 
   save() {
-    
     const {save} = this.props;
     const headingValues = this.getTitle();
 
@@ -97,9 +96,11 @@ export default class SlateEditor extends React.Component {
 
   renderEditor = (props, editor, next) => {
     const children = next()
+    const { isLoading } = props;
+
     return (
       <React.Fragment>
-        <ControlMenu save={() => this.save()}></ControlMenu>
+        <ControlMenu isLoading={isLoading} save={() => this.save()}></ControlMenu>
         {children}
         <HoverMenu innerRef={menu => (this.menu = menu)} editor={editor} />
       </React.Fragment>
