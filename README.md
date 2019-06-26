@@ -97,3 +97,6 @@ https://emotion.sh/docs/introduction
 
 Material Icons
 https://google.github.io/material-design-icons/
+
+Serialise HTML
+https://www.npmjs.com/package/slate-html-serializer

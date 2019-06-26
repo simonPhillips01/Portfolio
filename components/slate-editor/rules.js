@@ -16,7 +16,7 @@ const BLOCK_TAGS = {
     code: 'code'
   }
 
-  const rules = [
+  export const rules = [
     {
       deserialize(el, next) {
         const type = BLOCK_TAGS[el.tagName.toLowerCase()]
@@ -48,8 +48,9 @@ const BLOCK_TAGS = {
             default:
             return next()
         }
-      },
+      }
     },
+  },
     // Add a new rule that handles marks...
     {
       deserialize(el, next) {
