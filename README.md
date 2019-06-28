@@ -103,3 +103,6 @@ https://www.npmjs.com/package/slate-html-serializer
 
 Async lock
 https://www.npmjs.com/package/async-lock
+
+React-Toastify
+https://www.npmjs.com/package/react-toastify/v/1.4.3

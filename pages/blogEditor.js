@@ -1,10 +1,12 @@
 import React from 'react';
 import BaseLayout from '../components/layouts/BaseLayout';
 import BasePage from '../components/BasePage';
-import { Router } from '../routes';
 
+import { Router } from '../routes';
 import withAuth from '../components/hoc/withAuth';
+
 import SlateEditor from '../components/slate-editor/Editor';
+import { toast } from 'react-toastify';
 
 import {createBlog } from '../actions';
 
@@ -32,9 +34,11 @@ class BlogEditor extends React.Component {
         
         createBlog(blog, lockId).then(createdBlog => {
             this.setState({isSaving: false});
+            toast.success('Blog saved successfully');
             Router.pushRoute(`/blogs/${createdBlog._id}/edit`);
         }).catch((err) => {
             this.setState({isSaving: false});
+            toast.error('Unexpected error!');
             const message = err.message || 'Server Error!';
             console.error(message);
         })
