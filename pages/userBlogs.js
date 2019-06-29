@@ -5,9 +5,26 @@ import { Container, Row, Col } from 'reactstrap';
 
 import withAuth from '../components/hoc/withAuth';
 
+import { getUserBlogs } from '../actions';
 
 class UserBlogs extends React.Component {
+
+  static async getInitialProps({req}) {
+    let blogs = [];
+
+    try {
+      blogs = await getUserBlogs(req);
+    } catch(err) {
+      console.error(err);
+    }
+
+    return {blogs};
+  }
+
   render() {
+    const {blogs} = this.props;
+    console.log(blogs);
+
     return (
       <div>
          <BaseLayout {...this.props.auth} headerType={'landing'}>
