@@ -188,5 +188,23 @@
   .base-page {
     &.blog-user-page {
       padding-top: 50px;
+
+      .blog-status-title {
+        font-weight: bold;
+        color: $cyan
+      }
+
+      .user-blogs-list {
+        list-style: none;
+        padding-left: 0;
+
+        > li {
+          font-size: 28px;
+        }
+
+        a {
+          color: #ecedee;
+        }
+      }
     }
   }
