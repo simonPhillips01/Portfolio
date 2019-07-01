@@ -7,7 +7,7 @@ import PortButtonDropdown from '../components/ButtonDropdown';
 import withAuth from '../components/hoc/withAuth';
 import { Link, Router } from '../routes';
 
-import { getUserBlogs, updateBlog } from '../actions';
+import { getUserBlogs, updateBlog, deleteBlog } from '../actions';
 
 class UserBlogs extends React.Component {
 
@@ -31,8 +31,18 @@ class UserBlogs extends React.Component {
     })
   }
 
-  deleteBlog() {
-    alert('Deleting Blog')
+  deleteBlogWarning(blogId) {
+    const res = confirm('Are you sure you want to delete this blog post?');
+
+    if(res) {
+      this.deleteBlog(blogId);
+    }
+  }
+
+  deleteBlog(blogId) {
+    deleteBlog(blogId).then(status =>  {
+      Router.pushRoute('/userBlogs');
+    }).catch(err => console.error(err.message));
   }
 
   seperateBlogs(blogs) {
@@ -56,7 +66,7 @@ class UserBlogs extends React.Component {
 
     return [
       { text: status.view, handlers: { onClick: () => this.changeBlogStatus(status.value, blog._id)}},
-      { text: 'Delete', handlers: { onClick: () => this.deleteBlog() }}
+      { text: 'Delete', handlers: { onClick: () => this.deleteBlogWarning(blog._id)}}
     ]
   }
 
