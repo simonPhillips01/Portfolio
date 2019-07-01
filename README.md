@@ -106,3 +106,6 @@ https://www.npmjs.com/package/async-lock
 
 React-Toastify
 https://www.npmjs.com/package/react-toastify/v/1.4.3
+
+Slugify
+https://www.npmjs.com/package/slugify
