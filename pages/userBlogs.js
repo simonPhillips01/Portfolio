@@ -51,8 +51,8 @@ class UserBlogs extends React.Component {
     const status = this.createStatus(blog.status);
 
     return [
-      { text: status },
-      { text: 'Delete' }
+      { text: status, handlers: { onClick: () => this.changeBlogStatus() }},
+      { text: 'Delete', handlers: { onClick: () => this.deleteBlog() }}
     ]
   }
 
