@@ -5,9 +5,9 @@ import { Container, Row, Col } from 'reactstrap';
 import PortButtonDropdown from '../components/ButtonDropdown';
 
 import withAuth from '../components/hoc/withAuth';
-import { Link } from '../routes';
+import { Link, Router } from '../routes';
 
-import { getUserBlogs } from '../actions';
+import { getUserBlogs, updateBlog } from '../actions';
 
 class UserBlogs extends React.Component {
 
@@ -23,8 +23,12 @@ class UserBlogs extends React.Component {
     return {blogs};
   }
 
-  changeBlogStatus() {
-    alert('Changing blog status');
+  changeBlogStatus(status, blogId) {
+    updateBlog({status}, blogId).then(() => {
+      Router.pushRoute('/userBlogs');
+    }).catch(err => {
+      console.error(err.message);
+    })
   }
 
   deleteBlog() {
@@ -43,15 +47,15 @@ class UserBlogs extends React.Component {
   }
 
   createStatus(status) {
-    return status === 'draft' ? 'Publish' 
-                              : 'Make a Draft';
+    return status === 'draft' ? {view: 'Publish', value: 'published'} 
+                              : {view: 'Make a Draft', value: 'draft'};
   }
 
   dropdownOptions = (blog) => {
     const status = this.createStatus(blog.status);
 
     return [
-      { text: status, handlers: { onClick: () => this.changeBlogStatus() }},
+      { text: status.view, handlers: { onClick: () => this.changeBlogStatus(status.value, blog._id)}},
       { text: 'Delete', handlers: { onClick: () => this.deleteBlog() }}
     ]
   }
