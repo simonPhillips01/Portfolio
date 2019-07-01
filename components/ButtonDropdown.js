@@ -17,15 +17,26 @@ export default class PortButtonDropdown extends React.Component {
     });
   }
 
+  renderMenu(items) {
+      return (
+          <DropdownMenu>
+              {
+                items.map((items, index) => (
+                    <DropdownItem key={index}>{items.text}</DropdownItem>
+                  ))
+              }
+          </DropdownMenu>
+      )
+  }
+
   render() {
+    const { items } = this.props;
+
     return (
       <ButtonDropdown className="port-dropdown" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle caret size="sm">
         </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem>Publish</DropdownItem>
-          <DropdownItem>Delete</DropdownItem>
-        </DropdownMenu>
+            {this.renderMenu(items)}
       </ButtonDropdown>
     );
   }

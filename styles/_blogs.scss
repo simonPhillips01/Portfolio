@@ -19,11 +19,11 @@
   
     .post-preview {
       > a {
-        color: $gray-900;
+        color: $base-page-white;
         &:focus,
         &:hover {
           text-decoration: none;
-          color: $primary;
+          color: $teal;
         }
         > .post-title {
           font-size: 30px;
@@ -34,7 +34,7 @@
         > .post-subtitle {
           font-weight: 300;
           margin: 0 0 10px;
-          color: #565656;
+          color: $gray-500;
         }
       }
   
@@ -42,14 +42,14 @@
         font-size: 18px;
         font-style: italic;
         margin-top: 0;
-        color: $gray-600;
+        color: $gray-500;
         > a {
           text-decoration: none;
-          color: $gray-900;
+          color: $gray-500;
           &:focus,
           &:hover {
             text-decoration: underline;
-            color: $primary;
+            color: $teal;
           }
         }
       }
