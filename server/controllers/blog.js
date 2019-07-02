@@ -4,12 +4,14 @@ const AsyncLock = require('async-lock');
 const lock = new AsyncLock();
 
 exports.getBlogs = (req, res) => {
-    Blog.find({status: 'published'}, function(err, publishedBlogs) {
-        if(err) {
-            return res.status(422).send(err);
-        }
+    Blog.find({status: 'published'})
+        .sort({'createdAt': -1})
+        .exec(function(err, publishedBlogs) {
+    if(err) {
+        return res.status(422).send(err);
+    }
 
-        return res.json(publishedBlogs);
+    return res.json(publishedBlogs);
     });
 }
 
