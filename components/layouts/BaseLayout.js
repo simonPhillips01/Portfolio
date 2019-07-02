@@ -3,12 +3,12 @@ import Header from '../shared/Header';
 import Head from 'next/head';
 
 const BaseLayout = (props) => {
-  const { className, children, isAuthenticated, user, isSiteOwner } = props;
+  const { className, children, isAuthenticated, user, isSiteOwner, title } = props;
   const headerType = props.headerType || 'default';
   return (
     <React.Fragment>
       <Head>
-        <title>Simon Phillips</title>
+        <title>{title}</title>
         <script src="https://kit.fontawesome.com/76b070cc82.js"></script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Head>

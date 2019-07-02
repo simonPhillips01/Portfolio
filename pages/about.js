@@ -7,10 +7,7 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <BaseLayout {...this.props.auth} headerType="about">
-          {/* <div className="background-image">
-            <img src="/static/images/background-about.jpg" />
-          </div> */}
+        <BaseLayout title="Simon Phillips - About" {...this.props.auth} headerType="about">
           <BasePage className="about-page">
             <Row className="mt-5">
               <Col md="6">
