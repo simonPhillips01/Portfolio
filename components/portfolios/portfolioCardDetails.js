@@ -14,6 +14,7 @@ class PortfolioCardDetails extends React.Component {
                     <ModalHeader toggle={toggle}>{portfolio.title}</ModalHeader>
                     <ModalBody>
                         <p><b>Description: </b>{portfolio.description}</p>
+                        {/* <img src={}></img> */}
                         <p><b>Company: </b>{portfolio.company}</p>
                         <p><b>Position: </b>{portfolio.position}</p>
                         <p><b>Location: </b>{portfolio.location}</p>

@@ -46,10 +46,10 @@ class PortfolioNew extends React.Component {
     const {error} = this.state;
     return (
       <div>
-        <BaseLayout {...this.props.auth} headerType="about">
+        <BaseLayout {...this.props.auth} headerType="blog">
           <BasePage className="portfolio-create-page" title="Create new portfolio">
             <Row>
-              <Col md="6">
+              <Col md={{ size: 6, offset: 3 }}>
                 <PortfolioForm initialValues={INITIAL_VALUES} 
                                 error={error} 
                                 onSubmit={this.savePortfolio} />
