@@ -110,5 +110,12 @@ https://www.npmjs.com/package/react-toastify/v/1.4.3
 Slugify
 https://www.npmjs.com/package/slugify
 
+HTML Tags
+https://www.link-assistant.com/news/html-tags-for-seo.html
+
 Open Graph Protocol
 http://ogp.me/
+
+Robots
+https://www.robotstxt.org/
+https://support.google.com/webmasters/answer/6062596?hl=en
