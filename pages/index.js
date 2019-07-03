@@ -42,7 +42,7 @@ class Index extends React.Component {
                   title="Simon Phillips - Portfolio">
         <div className="main-section">
           <div className="background-image">
-            <img src="/static/images/background-index.png" />
+            <img alt="Guy programming welcome picture" src="/static/images/background-index.png" />
           </div>
 
           <Container>
@@ -57,7 +57,7 @@ class Index extends React.Component {
                           Have a look at my portfolio and job history.
                         </div>
                       </div>
-                      <img className="image" src="/static/images/section-1.png"/>
+                      <img alt="Guy programming welcome picture" className="image" src="/static/images/section-1.png"/>
                       <div className="shadow-custom">
                         <div className="shadow-inner"> </div>
                       </div>
@@ -98,9 +98,9 @@ class Index extends React.Component {
                 />
                 </div>
                 <div className="hero-welcome-bio">
-                  <h1>
+                  <h2>
                     Let's take a look at my work.
-                  </h1>
+                  </h2>
                 </div>
               </Col>
             </Row>
