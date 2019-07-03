@@ -119,3 +119,6 @@ http://ogp.me/
 Robots
 https://www.robotstxt.org/
 https://support.google.com/webmasters/answer/6062596?hl=en
+
+Favicon
+https://favicon.io/
