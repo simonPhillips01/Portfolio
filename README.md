@@ -122,3 +122,6 @@ https://support.google.com/webmasters/answer/6062596?hl=en
 
 Favicon
 https://favicon.io/
+
+NPM Babel plugin - transform define
+https://www.npmjs.com/package/babel-plugin-transform-define
