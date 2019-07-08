@@ -132,3 +132,6 @@ https://www.npmjs.com/package/compression
 Image compression
 https://compressjpeg.com/
 https://compresspng.com/
+
+Optimize CSS
+https://github.com/NMFR/optimize-css-assets-webpack-plugin
