@@ -26,7 +26,7 @@ class MyApp extends App {
   }
 
   componentDidMount() {
-    Fonts();
+    // Fonts(); Disabled due to onload flicker
   }
 
   render() {

@@ -1,4 +1,3 @@
-@import '/shared/fonts';
 @import '/shared/colors';
 @import './shared/mixins';
 
@@ -12,12 +11,6 @@
 //Components
 @import 'header';
 @import './slate-editor';
-
-.montserrat-loaded {
-  html, body {
-    font-family: 'Montserrat', 'Helvetica';
-  }
-}
 
 html, body {
     height: 100%;
