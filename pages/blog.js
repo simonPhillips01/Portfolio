@@ -95,12 +95,17 @@ class Blog extends React.Component {
                         </a>
                       </li>
                     </ul>
-                    <p className="copyright text-muted">Copyright &copy; Simon Phillips 2018</p>
+                    <p className="copyright text-muted">Copyright &copy; Simon Phillips 2019</p>
                   </div>
                 </Row>
               </Container>
             </footer>
           </BasePage>
+          <style jsx>
+          {`
+            @import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
+          `}
+          </style>
         </BaseLayout>
       </div>
     )
@@ -108,3 +113,4 @@ class Blog extends React.Component {
 }
 
 export default Blog;
+<script src="https://kit.fontawesome.com/76b070cc82.js"></script>

@@ -1,4 +1,4 @@
-# Links to errors and packages. To be completed later.
+# Links to resources, errors and packages. 
 
 Unknown props found on click
 https://stackoverflow.com/questions/47483177/link-unknown-props-found-onclick
@@ -125,3 +125,16 @@ https://favicon.io/
 
 NPM Babel plugin - transform define
 https://www.npmjs.com/package/babel-plugin-transform-define
+
+Compression module
+https://www.npmjs.com/package/compression
+
+Image compression
+https://compressjpeg.com/
+https://compresspng.com/
+
+Optimize CSS
+https://github.com/NMFR/optimize-css-assets-webpack-plugin
+
+Font Face Observer
+https://github.com/bramstein/fontfaceobserver

@@ -19,17 +19,12 @@ class About extends React.Component {
               </Col>
               <Col md="6">
                 <div className="fadein">
-                  <p>My name is Simon Phillips and I am an aspiring front end developer. I've been teaching myself through online tutorials and books how to code in Javascript</p>
-                  <p>I recently took part in a bootcamp organised with Deloitte where me and my team built a full stack Java application which we presented to the board. You can find the AWS hosted application here.</p>
-                  <p>I enjoy everything to do with tech and am particulary interested how technology can change industries. I'm most interested in building fullstack applications with an award winning front end</p>
-                </div>
-              </Col>
-              <Col md="12">
-                <div className="fadein">
-                  <p>I can help</p>
-                  <p>I'm currently available for freelance work</p>
-                  <p>If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
-                  <Button>Message me</Button>
+                  <h1>Hi... 👋</h1>
+                  <p>I'm a front end developer based in Bath. I have a passion for Javascript and love to create for the web and mobile devices.</p>
+                  <p>I'm currently teaching myself fullstack Javascript, this application has been built with next.js</p>
+                  <p>I'm currently available for freelance work so if you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
+                  <br></br>
+                  <Button color="warning"><a href={`mailto:${'simon.phillips01@gmail.com'}`}>Message me</a></Button>
                 </div>
               </Col>
             </Row>
