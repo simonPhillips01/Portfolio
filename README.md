@@ -1,4 +1,4 @@
-# Links to errors and packages. To be completed later.
+# Links to resources, errors and packages. 
 
 Unknown props found on click
 https://stackoverflow.com/questions/47483177/link-unknown-props-found-onclick
@@ -135,3 +135,6 @@ https://compresspng.com/
 
 Optimize CSS
 https://github.com/NMFR/optimize-css-assets-webpack-plugin
+
+Font Face Observer
+https://github.com/bramstein/fontfaceobserver

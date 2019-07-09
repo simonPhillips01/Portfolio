@@ -18,8 +18,6 @@ const BaseLayout = (props) => {
         <meta property="og:description" content="My name is Simon Phillips and I am an experienced Javascript Developer."/>
         {cannonical && <link rel="cannonical" href={`${process.env.BASE_URL}${cannonical}`}/>}
         <link rel="icon" type="image/ico" href="/static/favicon.ico"/>
-        <script src="https://kit.fontawesome.com/76b070cc82.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       </Head>
         <div className="layout-container">
           {/* {headerType === 'index' && <Header className="port-nav-index" isAuthenticated={isAuthenticated}/>}
