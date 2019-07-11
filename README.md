@@ -138,3 +138,6 @@ https://github.com/NMFR/optimize-css-assets-webpack-plugin
 
 Font Face Observer
 https://github.com/bramstein/fontfaceobserver
+
+Pagespeed
+https://developers.google.com/speed/pagespeed/insights/

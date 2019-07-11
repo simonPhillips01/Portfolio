@@ -20,7 +20,7 @@ class Callback extends React.Component {
       <div>
         <BaseLayout>
           <BasePage>
-            <h1>I am the callback page</h1>
+            <h1>Verifying login</h1>
           </BasePage>
         </BaseLayout>
       </div>
