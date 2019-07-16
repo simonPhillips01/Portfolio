@@ -1,4 +1,4 @@
 module.exports = {
     DB_URI: process.env.DB_URI,
-    NAMESPACE: 'https://simon-phillips-portfolio.herokuapp.com/'
+    NAMESPACE: 'https://simon-phillips-portfolio.herokuapp.com'
 }
