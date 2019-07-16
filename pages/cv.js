@@ -12,11 +12,11 @@ class CV extends React.Component {
             <Row>
               <Col md={{size: 8, offset: 2}}>
                 <div className="cv-title">
-                  <a download="Simon Phillips - Javascript developer.pdf" className="btn btn-success" href="/static/Simon Phillips - Javascript Developer.pdf">
+                  <a download="Simon Phillips - Javascript developer.pdf" className="btn btn-success" href="/static/Simon_Phillips_JavaScript_Developer.pdf">
                     Download
                   </a>
                 </div>
-                <iframe style={{width: '100%', height: '800px'}} src="/static/Simon Phillips - Javascript Developer.pdf"></iframe>
+                <iframe style={{width: '100%', height: '800px'}} src="/static/Simon_Phillips_JavaScript_Developer.pdf"></iframe>
               </Col>
             </Row>
           </BasePage>
